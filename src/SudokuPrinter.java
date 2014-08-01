@@ -63,7 +63,8 @@ public class SudokuPrinter {
 				i++;
 			}
 		} finally {
-			reader.close();
+			if (reader != null) 
+				reader.close();
 		}
 
 		return sudoku;
