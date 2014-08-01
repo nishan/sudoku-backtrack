@@ -15,13 +15,15 @@ public class SudokuBacktrack {
 	 */
 	public static boolean guess(int[][] sudoku, int i, int j) {
 
-		if (i == 8 && j == 9)
+		if (i == 8 && j == 9) {
+			return true;
+		}
 
-			if (j > 8) { // We are at last cell of the row. Go to first cell of
-							// next row.
-				j = 0;
-				i++;
-			}
+		if (j > 8) { // We are at last cell of the row. Go to first cell of
+						// next row.
+			j = 0;
+			i++;
+		}
 
 		if (sudoku[i][j] > 0)
 			return guess(sudoku, i, j + 1); // Solved already, move to next cell
